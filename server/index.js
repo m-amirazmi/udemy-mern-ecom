@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
 require('dotenv').config();
 
+const routesAuth = require('./routes/auth');
 const routesUser = require('./routes/user');
 
 // DBS
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(expressValidator());
 
 // ROUTES
+app.use('/api', routesAuth);
 app.use('/api', routesUser);
 
 const port = process.env.PORT || 8000
