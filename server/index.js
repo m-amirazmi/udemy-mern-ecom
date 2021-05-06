@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const routesAuth = require('./routes/auth');
 const routesUser = require('./routes/user');
-const routeCategory = require('./routes/category');
+const routesCategory = require('./routes/category');
 
 // DBS
 mongoose.connect(process.env.DATABASE, {
@@ -26,7 +26,7 @@ app.use(expressValidator());
 // ROUTES
 app.use('/api', routesAuth);
 app.use('/api', routesUser);
-app.use('/api', routeCategory);
+app.use('/api', routesCategory);
 
 
 const port = process.env.PORT || 8000
